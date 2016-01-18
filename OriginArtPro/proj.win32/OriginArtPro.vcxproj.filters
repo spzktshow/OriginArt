@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="win32">
+      <UniqueIdentifier>{84a8ebd7-7cf0-47f6-b75e-d441df67da40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource">
+      <UniqueIdentifier>{715254bc-d70b-4ec5-bf29-467dd3ace079}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\origin">
+      <UniqueIdentifier>{b7347c91-f813-468c-8d8e-88c4d7c16af0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\origin\base">
+      <UniqueIdentifier>{8b9e70c5-25c8-474f-80e6-1ccb19eb1a5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\origin\memory">
+      <UniqueIdentifier>{7a3bff12-12b9-4b97-beb7-df6f5a633050}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\origin\state">
+      <UniqueIdentifier>{cca02486-d3bd-4d24-ae2f-088bae1d58c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\origin\structure">
+      <UniqueIdentifier>{aaf4f5c9-3c43-4a7f-8d1e-7783ba8a6af8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\HelloWorldScene.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\origin\state\OExclusion.cpp">
+      <Filter>src\origin\state</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\origin\state\OState.cpp">
+      <Filter>src\origin\state</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\origin\structure\OStack.cpp">
+      <Filter>src\origin\structure</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h">
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppDelegate.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\HelloWorldScene.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\origin\memory\ODeque.h">
+      <Filter>src\origin\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\origin\memory\OList.h">
+      <Filter>src\origin\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\origin\state\OExclusion.h">
+      <Filter>src\origin\state</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\origin\state\OState.h">
+      <Filter>src\origin\state</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\origin\structure\OStack.h">
+      <Filter>src\origin\structure</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="game.rc">
+      <Filter>resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

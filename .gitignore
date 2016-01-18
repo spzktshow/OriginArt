@@ -1,3 +1,7 @@
+Debug.win32
+*.sdf
+*.opensdf
+
 # Compiled Object files
 *.slo
 *.lo
