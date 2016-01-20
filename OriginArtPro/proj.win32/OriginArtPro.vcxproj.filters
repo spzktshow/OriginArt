@@ -71,6 +71,15 @@
     <ClInclude Include="..\Classes\origin\structure\OStack.h">
       <Filter>src\origin\structure</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\origin\origin.h">
+      <Filter>src\origin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\origin\OriginMacros.h">
+      <Filter>src\origin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\origin\base\oConfig.h">
+      <Filter>src\origin\base</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc">

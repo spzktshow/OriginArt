@@ -71,7 +71,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(COCOS_FRAMEWORKS)\cocos2d-x-3.9\cocos\audio\include;$(COCOS_FRAMEWORKS)\cocos2d-x-3.9\external;$(COCOS_FRAMEWORKS)\cocos2d-x-3.9\external\chipmunk\include\chipmunk;$(COCOS_FRAMEWORKS)\cocos2d-x-3.9\extensions;..\Classes\origin\structure;..\Classes\origin\base;..\Classes\origin\state;..\Classes\origin\memory;..\Classes\origin;..\Classes;..;%(AdditionalIncludeDirectories);$(_COCOS_HEADER_WIN32_BEGIN);$(_COCOS_HEADER_WIN32_END)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(COCOS_FRAMEWORKS)\cocos2d-x-3.9\cocos\audio\include;$(COCOS_FRAMEWORKS)\cocos2d-x-3.9\external;$(COCOS_FRAMEWORKS)\cocos2d-x-3.9\external\chipmunk\include\chipmunk;$(COCOS_FRAMEWORKS)\cocos2d-x-3.9\extensions;..\Classes\origin\state;..\Classes\origin\structure;..\Classes\origin\memory;..\Classes\origin\base;..\Classes\origin;..\Classes;..;%(AdditionalIncludeDirectories);$(_COCOS_HEADER_WIN32_BEGIN);$(_COCOS_HEADER_WIN32_END)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;CC_ENABLE_CHIPMUNK_INTEGRATION=1;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -156,8 +156,11 @@ xcopy /Y /Q "$(COCOS_FRAMEWORKS)\cocos2d-x-3.9\prebuilt\win32\*.*" "$(OutDir)"
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
+    <ClInclude Include="..\Classes\origin\base\oConfig.h" />
     <ClInclude Include="..\Classes\origin\memory\ODeque.h" />
     <ClInclude Include="..\Classes\origin\memory\OList.h" />
+    <ClInclude Include="..\Classes\origin\origin.h" />
+    <ClInclude Include="..\Classes\origin\OriginMacros.h" />
     <ClInclude Include="..\Classes\origin\state\OExclusion.h" />
     <ClInclude Include="..\Classes\origin\state\OState.h" />
     <ClInclude Include="..\Classes\origin\structure\OStack.h" />

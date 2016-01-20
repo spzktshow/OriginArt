@@ -6,6 +6,8 @@
 #define USING_NS_O				using namespace origin
 #define NS_O					::origin
 
+#include "oConfig.h"
+
 #endif // ! __ORIGIN_MACROS_H__
 
 

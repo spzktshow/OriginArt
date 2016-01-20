@@ -3,11 +3,10 @@
 
 #include "OriginMacros.h"
 //origin
-#include "state/State.h"
+#include "state/OExclusion.h"
+#include "state/OState.h"
 //memory
 #include "memory/OList.h"
-//datastructure
-//base
-#include "base/System.h"
+
 
 #endif // !__ORIGIN_H__

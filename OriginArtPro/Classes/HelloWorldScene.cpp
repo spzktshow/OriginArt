@@ -35,5 +35,25 @@ bool HelloWorld::init()
 
     addChild(rootNode);
 
+
+	cocos2d::Sprite * sp = new cocos2d::Sprite;
+	sp->setName("lxy");
+	cocos2d::RefPtr<cocos2d::Sprite> sprite;
+	sprite.weakAssign(sp);
+	CCLOG("%d", sp->getReferenceCount());
+	ps.push_back(sprite);
+	CCLOG("%d", sp->getReferenceCount());
+	addChild(sp);
+	CCLOG("%d", sp->getReferenceCount());
     return true;
+}
+
+void HelloWorld::onEnter()
+{
+	cocos2d::Layer::onEnter();
+	cocos2d::Sprite * sp = (cocos2d::Sprite *)getChildByName("lxy");
+	if (sp)
+	{
+		CCLOG("%d", sp->getReferenceCount());
+	}
 }
