@@ -1,5 +1,5 @@
-﻿#ifndef __OLIST_H__
-#define __OLIST_H__
+﻿#ifndef __ORIGIN_LIST_H__
+#define __ORIGIN_LIST_H__
 
 #include "OriginMacros.h"
 #include "base/ccMacros.h"
@@ -50,7 +50,6 @@ public:
 	{
 		static_assert(std::is_convertible<T, cocos2d::Ref*>::value, "Invalid Type for origin::List<T>!");
 		CCLOGINFO("In the default constructor with capacity of List");
-
 	}
 
 	~List<T>()
@@ -274,26 +273,6 @@ public:
 		_data.clear();
 	}
 
-	/****
-	void swap(T object1, T object2)
-	{
-		ssize_t idx1 = getIndex(object1);
-		ssize_t idx2 = getIndex(object2);
-
-		CCASSERT(idx1 >= 0 && idx2 >= 0, "invalid object index");
-	}
-
-	void swap(ssize_t index1, ssize_t index2)
-	{
-		
-	}
-
-	void replace(ssize_t index, T obeect)
-	{
-
-	}
-	*****/
-
 	void reverse()
 	{
 		_data.reverse();
@@ -314,4 +293,4 @@ protected:
 
 NS_O_END;
 
-#endif // !__OLIST_H__
+#endif // !__ORIGIN_LIST_H__

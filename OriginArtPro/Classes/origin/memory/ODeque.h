@@ -1,8 +1,12 @@
-#ifndef __ODEQUE_H__
-#define __ODEQUE_H__
+#ifndef __ORIGIN_DEQUE_H__
+#define __ORIGIN_DEQUE_H__
 
 #include "base/CCRef.h"
 #include "OriginMacros.h"
+
+#include <deque>
+#include <functional>
+#include <algorithm>
 
 NS_O_BEGIN
 
@@ -18,11 +22,11 @@ public:
 	iterator begin() { return _data.begin(); }
 	const_iterator begin() const { return _data.begin(); }
 	iterator end() { return _data.end(); }
-	const_iterator end() { return _data.end(); }
+	const_iterator end() const { return _data.end(); }
 	const_iterator cbegin() const { return _data.cbegin(); }
 	const_iterator cend() const { return _data.cend(); }
 	reverse_iterator rbegin() { return _data.rbegin(); }
-	const_reverse_iterator rbegin() { return _data.rbegin(); }
+	const_reverse_iterator rbegin() const { return _data.rbegin(); }
 	reverse_iterator rend() { return _data.rend(); }
 	const_reverse_iterator rend() const { return _data.rend(); }
 	const_reverse_iterator crbegin() const { return _data.crbegin(); }
@@ -275,4 +279,4 @@ protected:
 
 NS_O_END;
 
-#endif // !__ODEQUE_H__
+#endif // !__ORIGIN_DEQUE_H__

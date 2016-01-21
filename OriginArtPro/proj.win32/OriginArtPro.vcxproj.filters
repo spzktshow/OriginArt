@@ -42,8 +42,11 @@
     <ClCompile Include="..\Classes\origin\state\OState.cpp">
       <Filter>src\origin\state</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\origin\structure\OStack.cpp">
-      <Filter>src\origin\structure</Filter>
+    <ClCompile Include="..\Classes\origin\state\OStateStack.cpp">
+      <Filter>src\origin\state</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\origin\state\OStateQueue.cpp">
+      <Filter>src\origin\state</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -79,6 +82,15 @@
     </ClInclude>
     <ClInclude Include="..\Classes\origin\base\oConfig.h">
       <Filter>src\origin\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\origin\structure\OQueue.h">
+      <Filter>src\origin\structure</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\origin\state\OStateStack.h">
+      <Filter>src\origin\state</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\origin\state\OStateQueue.h">
+      <Filter>src\origin\state</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

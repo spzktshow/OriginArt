@@ -1,50 +1,63 @@
-#ifndef __OSTACK_H_
-#define __OSTACK_H_
+#ifndef __ORIGIN_STACK_H_
+#define __ORIGIN_STACK_H_
 
-#include "OState.h"
+#include "cocos2d.h"
 
 NS_O_BEGIN
-
-class StateStackProtocol
+/**
+*The container shall support the following operations:
+*.empty
+*.size
+*.back
+*.pushBack
+*.popBack
+***/
+template<class _T, class _Container = cocos2d::Vector<_T>>
+class Stack
 {
 public:
-	virtual DynamicState * back() const = 0;
+	Stack<_T, _Container>()
+	{
+		static_assert(std::is_convertible<_T, cocos2d::Ref *>::value, "Invalid type for Stack!");
+	};
 
-	virtual void resumeBack() = 0;
-	virtual void pauseBack() = 0;
+	virtual ~Stack<_T, _Container>()
+	{
+		CCLOGINFO("In the destructor of Stack. ");
+		_container.clear();
+	};
 
-	virtual void pushBack(DynamicState *) = 0;
-	virtual void popFront() = 0;
+	bool empty() const
+	{
+		return _container.empty();
+	};
 
-	virtual void pushBackAuto(DynamicState *) = 0;
-	virtual void popFrontAuto() = 0;
-};
+	size_t size()
+	{
+		return _container.size();
+	};
 
-template<typename T>
-class StateStack : public DynamicState, public StateStackProtocol
-{
-public:
-	StateStack(const StateDefinitaion * stateDefiniation, const ExclusionDefiniation * exclusionDefiniation);
-	virtual ~StateStack();
+	void push(_T object)
+	{
+		_container.pushBack(object);
+	};
 
-	DynamicState * back() const override;
+	void pop()
+	{
+		_container.popBack();
+	};
 
-	virtual void resumeBack() override;
-	virtual void pauseBack() override;
+	_T top() const
+	{
+		return _container.back();
+	};
 
-	void pushBack(DynamicState *) override;
-	void popFront() override;
-
-	void pushBackAuto(DynamicState *) override;
-	void popFrontAuto() override;
+	const _Container& getContainer() const
+	{
+		return _container;
+	};
 protected:
-	void startExecute() override;
-	void stopExecute() override;
-
-	void pauseExecute() override;
-	void resumeExecute() override;
-
-	T _container;
+	_Container _container;
 };
 
 NS_O_END

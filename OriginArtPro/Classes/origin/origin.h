@@ -7,6 +7,10 @@
 #include "state/OState.h"
 //memory
 #include "memory/OList.h"
+#include "memory/ODeque.h"
+//structure
+#include "structure/OStack.h"
+#include "structure/OQueue.h"
 
 
 #endif // !__ORIGIN_H__

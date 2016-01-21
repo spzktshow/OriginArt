@@ -1,6 +1,7 @@
 #include "HelloWorldScene.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
+#include "origin.h"
 
 USING_NS_CC;
 
@@ -21,6 +22,7 @@ Scene* HelloWorld::createScene()
     return scene;
 }
 
+
 // on "init" you need to initialize your instance
 bool HelloWorld::init()
 {
@@ -36,15 +38,7 @@ bool HelloWorld::init()
     addChild(rootNode);
 
 
-	cocos2d::Sprite * sp = new cocos2d::Sprite;
-	sp->setName("lxy");
-	cocos2d::RefPtr<cocos2d::Sprite> sprite;
-	sprite.weakAssign(sp);
-	CCLOG("%d", sp->getReferenceCount());
-	ps.push_back(sprite);
-	CCLOG("%d", sp->getReferenceCount());
-	addChild(sp);
-	CCLOG("%d", sp->getReferenceCount());
+	
     return true;
 }
 

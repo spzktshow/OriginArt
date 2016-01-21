@@ -35,6 +35,7 @@ State::State(const StateDefinitaion * stateDefiniation)
 
 State::~State()
 {
+	stop();
 	_stateDefiniation = nullptr;
 }
 
@@ -60,8 +61,8 @@ void State::stop()
 
 	if (_start)
 	{
-		_start = false;
 		stopExecute();
+		_start = false;
 	}
 }
 
