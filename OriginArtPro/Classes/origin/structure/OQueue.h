@@ -3,6 +3,7 @@
 
 #include "cocos2d.h"
 #include "OList.h"
+#include "ODeque.h"
 
 NS_O_BEGIN
 /****
@@ -14,7 +15,7 @@ NS_O_BEGIN
 *.pushBack
 *.popBack
 **/
-template<class _T, class _Container = origin::List<_T>>
+template<class _T, class _Container = origin::Deque<_T>>
 class Queue
 {
 public:

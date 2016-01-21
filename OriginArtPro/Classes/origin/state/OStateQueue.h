@@ -25,6 +25,10 @@ protected:
 	void resumeExecute() override;
 
 	Queue<DynamicState *> _queue;
+
+	void frontExclusion();
+	void frontUnExclusion();
+	void backExclusion();
 };
 
 NS_O_END;

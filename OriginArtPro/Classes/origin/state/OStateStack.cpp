@@ -21,7 +21,6 @@ void StateStack::popBack()
 	if (!isStart()) return;
 	if (_stack.size() > 0)
 	{
-		DynamicState * state = _stack.top();
 		//栈停止的情况下解除栈顶排斥(-1)
 		if (!isRunning()) topUnExclusion();
 		_stack.pop();
