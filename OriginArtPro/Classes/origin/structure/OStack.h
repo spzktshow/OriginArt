@@ -56,6 +56,11 @@ public:
 	{
 		return _container;
 	};
+
+	_Container& getContainer()
+	{
+		return _container;
+	};
 protected:
 	_Container _container;
 };

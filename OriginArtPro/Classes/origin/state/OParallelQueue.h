@@ -11,7 +11,7 @@ NS_O_BEGIN
 class StateParallelQueue : public DynamicState
 {
 public:
-	StateParallelQueue(const StateDefinitaion * stateDefiniation, const ExclusionDefiniation * exclusionDefiniation) :DynamicState(stateDefiniation, exclusionDefiniation);
+	StateParallelQueue(const StateDefinitaion * stateDefiniation, const ExclusionDefiniation * exclusionDefiniation);
 	virtual ~StateParallelQueue();
 
 	void push(DynamicState * state);

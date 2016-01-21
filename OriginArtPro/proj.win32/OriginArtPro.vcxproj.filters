@@ -48,6 +48,9 @@
     <ClCompile Include="..\Classes\origin\state\OStateQueue.cpp">
       <Filter>src\origin\state</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\origin\state\OParallelQueue.cpp">
+      <Filter>src\origin\state</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -90,6 +93,12 @@
       <Filter>src\origin\state</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\origin\state\OStateQueue.h">
+      <Filter>src\origin\state</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\origin\state\OParallelQueue.h">
+      <Filter>src\origin\state</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\origin\state\OStateDebug.h">
       <Filter>src\origin\state</Filter>
     </ClInclude>
   </ItemGroup>

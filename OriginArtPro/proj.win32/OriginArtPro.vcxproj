@@ -149,6 +149,7 @@ xcopy /Y /Q "$(COCOS_FRAMEWORKS)\cocos2d-x-3.9\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="..\Classes\origin\state\OExclusion.cpp" />
+    <ClCompile Include="..\Classes\origin\state\OParallelQueue.cpp" />
     <ClCompile Include="..\Classes\origin\state\OState.cpp" />
     <ClCompile Include="..\Classes\origin\state\OStateQueue.cpp" />
     <ClCompile Include="..\Classes\origin\state\OStateStack.cpp" />
@@ -163,7 +164,9 @@ xcopy /Y /Q "$(COCOS_FRAMEWORKS)\cocos2d-x-3.9\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\origin\origin.h" />
     <ClInclude Include="..\Classes\origin\OriginMacros.h" />
     <ClInclude Include="..\Classes\origin\state\OExclusion.h" />
+    <ClInclude Include="..\Classes\origin\state\OParallelQueue.h" />
     <ClInclude Include="..\Classes\origin\state\OState.h" />
+    <ClInclude Include="..\Classes\origin\state\OStateDebug.h" />
     <ClInclude Include="..\Classes\origin\state\OStateQueue.h" />
     <ClInclude Include="..\Classes\origin\state\OStateStack.h" />
     <ClInclude Include="..\Classes\origin\structure\OQueue.h" />
