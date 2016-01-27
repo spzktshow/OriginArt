@@ -148,6 +148,8 @@ xcopy /Y /Q "$(COCOS_FRAMEWORKS)\cocos2d-x-3.9\prebuilt\win32\*.*" "$(OutDir)"
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
+    <ClCompile Include="..\Classes\origin\state\lifeCircle\OLifeCircle.cpp" />
+    <ClCompile Include="..\Classes\origin\state\lifeCircle\OLifeCircleTrigger.cpp" />
     <ClCompile Include="..\Classes\origin\state\OExclusion.cpp" />
     <ClCompile Include="..\Classes\origin\state\OParallelQueue.cpp" />
     <ClCompile Include="..\Classes\origin\state\OState.cpp" />
@@ -158,11 +160,15 @@ xcopy /Y /Q "$(COCOS_FRAMEWORKS)\cocos2d-x-3.9\prebuilt\win32\*.*" "$(OutDir)"
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
+    <ClInclude Include="..\Classes\originGame\originGame.h" />
+    <ClInclude Include="..\Classes\originGame\OriginGameMacros.h" />
     <ClInclude Include="..\Classes\origin\base\oConfig.h" />
     <ClInclude Include="..\Classes\origin\memory\ODeque.h" />
     <ClInclude Include="..\Classes\origin\memory\OList.h" />
     <ClInclude Include="..\Classes\origin\origin.h" />
     <ClInclude Include="..\Classes\origin\OriginMacros.h" />
+    <ClInclude Include="..\Classes\origin\state\lifeCircle\OLifeCircle.h" />
+    <ClInclude Include="..\Classes\origin\state\lifeCircle\OLifeCircleTrigger.h" />
     <ClInclude Include="..\Classes\origin\state\OExclusion.h" />
     <ClInclude Include="..\Classes\origin\state\OParallelQueue.h" />
     <ClInclude Include="..\Classes\origin\state\OState.h" />

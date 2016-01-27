@@ -6,7 +6,14 @@
 NS_O_BEGIN
 NS_OG_BEGIN
 
+class UnitDefiniation
+{
+public:
+	UnitDefiniation();
+	virtual ~UnitDefiniation();
 
+
+};
 
 NS_OG_END
 NS_O_END

@@ -25,6 +25,12 @@
     <Filter Include="src\origin\structure">
       <UniqueIdentifier>{aaf4f5c9-3c43-4a7f-8d1e-7783ba8a6af8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\originGame">
+      <UniqueIdentifier>{6b34f2c9-dd1b-4fbd-8d92-0f574de06eee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\origin\state\lifeCircle">
+      <UniqueIdentifier>{4f694f9d-f505-44c6-be15-a25120a50ec9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -50,6 +56,12 @@
     </ClCompile>
     <ClCompile Include="..\Classes\origin\state\OParallelQueue.cpp">
       <Filter>src\origin\state</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\origin\state\lifeCircle\OLifeCircle.cpp">
+      <Filter>src\origin\state\lifeCircle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\origin\state\lifeCircle\OLifeCircleTrigger.cpp">
+      <Filter>src\origin\state\lifeCircle</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -100,6 +112,18 @@
     </ClInclude>
     <ClInclude Include="..\Classes\origin\state\OStateDebug.h">
       <Filter>src\origin\state</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\originGame\originGame.h">
+      <Filter>src\originGame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\originGame\OriginGameMacros.h">
+      <Filter>src\originGame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\origin\state\lifeCircle\OLifeCircle.h">
+      <Filter>src\origin\state\lifeCircle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\origin\state\lifeCircle\OLifeCircleTrigger.h">
+      <Filter>src\origin\state\lifeCircle</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
