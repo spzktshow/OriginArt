@@ -4,26 +4,26 @@
 #include "OriginMacros.h"
 #include <string>
 
-//time
-//event
-
 /****触发器最小单位***/
-class LifeCircleTrigger
+class LifeCircleTriggerDefiniation
 {
 public:
-	LifeCircleTrigger(const std::string&type);
-	virtual ~LifeCircleTrigger();
+	LifeCircleTriggerDefiniation(const std::string&type);
+	virtual ~LifeCircleTriggerDefiniation();
 
 	const std::string& getType() const;
 protected:
 	std::string _type;
 };
 
-class LifeCircleTimeTrigger : public LifeCircleTrigger
+//time
+class LifeCircleTimeTriggerDefiniation : public LifeCircleTriggerDefiniation
 {
 public:
-	LifeCircleTimeTrigger(const std::string&type, float time, unsigned int count);
-	virtual ~LifeCircleTimeTrigger();
+	static const std::string TYPE;
+
+	LifeCircleTimeTriggerDefiniation(float time, unsigned int count, const std::string&type = TYPE);
+	virtual ~LifeCircleTimeTriggerDefiniation();
 
 	float getTime() const;
 	unsigned int getCount() const;
@@ -32,11 +32,14 @@ protected:
 	unsigned int _count;
 };
 
-class LifeCircleEventTrigger : public LifeCircleTrigger
+//event
+class LifeCircleEventTriggerDefiniation : public LifeCircleTriggerDefiniation
 {
 public:
-	LifeCircleEventTrigger(const std::string&type);
-	virtual ~LifeCircleEventTrigger();
+	static const std::string TYPE;
+
+	LifeCircleEventTriggerDefiniation(const std::string& eventName, const std::string& eventType, const std::string&type = TYPE);
+	virtual ~LifeCircleEventTriggerDefiniation();
 
 	const std::string& getEventName() const;
 	/**事件的副类型**/
