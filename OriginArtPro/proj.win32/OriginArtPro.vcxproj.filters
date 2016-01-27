@@ -31,6 +31,9 @@
     <Filter Include="src\origin\state\lifeCircle">
       <UniqueIdentifier>{4f694f9d-f505-44c6-be15-a25120a50ec9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\originGame\unit">
+      <UniqueIdentifier>{462cca53-5856-4f9e-9d89-aaec9f36f20d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -62,6 +65,18 @@
     </ClCompile>
     <ClCompile Include="..\Classes\origin\state\lifeCircle\OLifeCircleTrigger.cpp">
       <Filter>src\origin\state\lifeCircle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\origin\state\lifeCircle\OLifeCircleBehavior.cpp">
+      <Filter>src\origin\state\lifeCircle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\originGame\unit\OGUnit.cpp">
+      <Filter>src\originGame\unit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\originGame\unit\OGUnitDefiniation.cpp">
+      <Filter>src\originGame\unit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\originGame\unit\OGUnitStateDefiniation.cpp">
+      <Filter>src\originGame\unit</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -124,6 +139,18 @@
     </ClInclude>
     <ClInclude Include="..\Classes\origin\state\lifeCircle\OLifeCircleTrigger.h">
       <Filter>src\origin\state\lifeCircle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\origin\state\lifeCircle\OLifeCircleBehavior.h">
+      <Filter>src\origin\state\lifeCircle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\originGame\unit\OGUnit.h">
+      <Filter>src\originGame\unit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\originGame\unit\OGUnitDefiniation.h">
+      <Filter>src\originGame\unit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\originGame\unit\OGUnitStateDefiniation.h">
+      <Filter>src\originGame\unit</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
