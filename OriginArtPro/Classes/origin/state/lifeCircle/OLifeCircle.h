@@ -2,7 +2,9 @@
 #define __ORIGIN_LIFE_CIRCLE_H_
 
 #include <string>
+#include <vector>
 #include "OriginMacros.h"
+#include "OLifeCircleTrigger.h"
 
 NS_O_BEGIN
 /***配置状态的生命周期***/
@@ -17,6 +19,8 @@ public:
 
 protected:
 	std::string _type;
+
+	std::vector<LifeCircleTriggerDefiniation *> _triggers;
 };
 
 

@@ -3,6 +3,7 @@
 
 #include "OriginMacros.h"
 #include <string>
+#include "cocos2d.h"
 
 class LifeCircleBehaviorDefiniation
 {
@@ -21,7 +22,7 @@ class LifeCircleEventBehaviorDefiniation : public LifeCircleBehaviorDefiniation
 public:
 	static const std::string TYPE;
 
-	LifeCircleEventBehaviorDefiniation(const std::string&type);
+	LifeCircleEventBehaviorDefiniation(const std::string& eventName, const std::string& eventType, const std::string&type = TYPE);
 	virtual ~LifeCircleEventBehaviorDefiniation();
 
 	const std::string& getEventName() const;
@@ -31,5 +32,15 @@ protected:
 	std::string _eventType;
 };
 
+class LifeCircleBehavior : public cocos2d::Ref
+{
+public:
+	LifeCircleBehavior(const LifeCircleBehaviorDefiniation * behaviorDef);
+	virtual ~LifeCircleBehavior();
+
+	const LifeCircleBehaviorDefiniation * getBehaviorDef() const;
+protected:
+	const LifeCircleBehaviorDefiniation * _behaviorDef;
+};
 
 #endif // !__ORIGIN_LIFE_CIRCLE_BEHAVIOR_H_
