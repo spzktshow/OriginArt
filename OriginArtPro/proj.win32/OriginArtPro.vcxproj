@@ -71,7 +71,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(COCOS_FRAMEWORKS)\cocos2d-x-3.9\cocos\audio\include;$(COCOS_FRAMEWORKS)\cocos2d-x-3.9\external;$(COCOS_FRAMEWORKS)\cocos2d-x-3.9\external\chipmunk\include\chipmunk;$(COCOS_FRAMEWORKS)\cocos2d-x-3.9\extensions;..\Classes\originGame\unit;..\Classes\originGame;..\Classes\origin\state\lifeCircle;..\Classes\origin\state;..\Classes\origin\structure;..\Classes\origin\memory;..\Classes\origin\base;..\Classes\origin;..\Classes;..;%(AdditionalIncludeDirectories);$(_COCOS_HEADER_WIN32_BEGIN);$(_COCOS_HEADER_WIN32_END)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(COCOS_FRAMEWORKS)\cocos2d-x-3.9\cocos\audio\include;$(COCOS_FRAMEWORKS)\cocos2d-x-3.9\external;$(COCOS_FRAMEWORKS)\cocos2d-x-3.9\external\chipmunk\include\chipmunk;$(COCOS_FRAMEWORKS)\cocos2d-x-3.9\extensions;..\Classes\originGame\unit;..\Classes\originGame;..\Classes\origin\state\lifeCircle;..\Classes\origin\behaviorTree;..\Classes\origin\state;..\Classes\origin\structure;..\Classes\origin\memory;..\Classes\origin\base;..\Classes\origin;..\Classes;..;%(AdditionalIncludeDirectories);$(_COCOS_HEADER_WIN32_BEGIN);$(_COCOS_HEADER_WIN32_END)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;CC_ENABLE_CHIPMUNK_INTEGRATION=1;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -151,6 +151,7 @@ xcopy /Y /Q "$(COCOS_FRAMEWORKS)\cocos2d-x-3.9\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\originGame\unit\OGUnit.cpp" />
     <ClCompile Include="..\Classes\originGame\unit\OGUnitDefiniation.cpp" />
     <ClCompile Include="..\Classes\originGame\unit\OGUnitStateDefiniation.cpp" />
+    <ClCompile Include="..\Classes\origin\behaviorTree\OBehaviorTree.cpp" />
     <ClCompile Include="..\Classes\origin\state\lifeCircle\OLifeCircle.cpp" />
     <ClCompile Include="..\Classes\origin\state\lifeCircle\OLifeCircleBehavior.cpp" />
     <ClCompile Include="..\Classes\origin\state\lifeCircle\OLifeCircleTrigger.cpp" />
@@ -170,6 +171,8 @@ xcopy /Y /Q "$(COCOS_FRAMEWORKS)\cocos2d-x-3.9\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\originGame\unit\OGUnitDefiniation.h" />
     <ClInclude Include="..\Classes\originGame\unit\OGUnitStateDefiniation.h" />
     <ClInclude Include="..\Classes\origin\base\oConfig.h" />
+    <ClInclude Include="..\Classes\origin\behaviorTree\OBehaviorTree.h" />
+    <ClInclude Include="..\Classes\origin\behaviorTree\OBehaviorTreeDebug.h" />
     <ClInclude Include="..\Classes\origin\memory\ODeque.h" />
     <ClInclude Include="..\Classes\origin\memory\OList.h" />
     <ClInclude Include="..\Classes\origin\origin.h" />

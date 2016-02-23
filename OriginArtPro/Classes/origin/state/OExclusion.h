@@ -8,7 +8,7 @@ NS_O_BEGIN
 class ExclusionDefiniation
 {
 public:
-	static const unsigned int DEFAULT_EXCLUSION;
+	static const int DEFAULT_EXCLUSION;
 	enum class ExclusionType
 	{
 		PAUSE = 0,
@@ -20,11 +20,11 @@ public:
 
 	const ExclusionType& getType() const;
 
-	unsigned int getDefaultExculsion() const;
+	int getDefaultExculsion() const;
 protected:
 	ExclusionType _type;
 
-	unsigned int _defaultExclusion;
+	int _defaultExclusion;
 };
 
 class ExclusionProtocol
@@ -32,8 +32,8 @@ class ExclusionProtocol
 public:
 	virtual ~ExclusionProtocol();
 
-	virtual unsigned int exclusion() = 0;
-	virtual unsigned int unexclusion() = 0;
+	virtual int exclusion() = 0;
+	virtual int unexclusion() = 0;
 	virtual void resetExclusion() = 0;
 };
 
@@ -43,13 +43,13 @@ public:
 	Exclusion(const ExclusionDefiniation * exclusionDefiniation);
 	virtual ~Exclusion();
 
-	unsigned int exclusion() override;
-	unsigned int unexclusion() override;
+	int exclusion() override;
+	int unexclusion() override;
 	void resetExclusion() override;
 
 	int getExclusionCount() const;
 
-	const ExclusionDefiniation::ExclusionType& checkType() const;
+	ExclusionDefiniation::ExclusionType checkType() const;
 protected:
 	const ExclusionDefiniation * _exclusionDefiniation;
 

@@ -65,8 +65,8 @@ public:
 	DynamicState(const StateDefinitaion * stateDefiniation, const ExclusionDefiniation * exclusionDefiniation);
 	virtual ~DynamicState();
 
-	unsigned int exclusion() override;
-	unsigned int unexclusion() override;
+	int exclusion() override;
+	int unexclusion() override;
 	void resetExclusion() override;
 
 	void start(unsigned int exclusionCount);

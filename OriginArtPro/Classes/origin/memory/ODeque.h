@@ -34,12 +34,12 @@ public:
 
 	Deque<T>() : _data()
 	{
-		static_assert(std::is_convertible<T, Ref*>::value, "Invalid Type for origin::Deque<T>!");
+		static_assert(std::is_convertible<T, cocos2d::Ref*>::value, "Invalid Type for origin::Deque<T>!");
 	}
 
 	explicit Deque<T>(ssize_t capacity) : _data()
 	{
-		static_assert(std::is_convertible<T, Ref*>::value, "Invalid Type for origin::Deque<T>!");
+		static_assert(std::is_convertible<T, cocos2d::Ref*>::value, "Invalid Type for origin::Deque<T>!");
 		CCLOGINFO("In the default constructor with capacity of Deque.");
 		reserve(capacity);
 	}
@@ -52,7 +52,7 @@ public:
 
 	Deque<T>(const Deque<T>& other)
 	{
-		static_assert(std::is_convertible<T, Ref*>::value, "Invalid Type for origin::Deque<T>!");
+		static_assert(std::is_convertible<T, cocos2d::Ref*>::value, "Invalid Type for origin::Deque<T>!");
 		CCLOGINFO("In the copy constructor!");
 		_data = other._data;
 		addRefForAllObjects();
@@ -60,7 +60,7 @@ public:
 
 	Deque<T>(Deque<T>&& other)
 	{
-		static_assert(std::is_convertible<T, Ref*>::value, "Invalid Type for origin::Deque<T>!");
+		static_assert(std::is_convertible<T, cocos2d::Ref*>::value, "Invalid Type for origin::Deque<T>!");
 		CCLOGINFO("In the move constructor of Deque!");
 		_data = std::move(other._data);
 	}
@@ -275,6 +275,14 @@ public:
 	}
 protected:
 	std::deque<T> _data;
+
+	void addRefForAllObjects()
+	{
+		for (const auto &obj : _data)
+		{
+			obj->retain();
+		}
+	}
 };
 
 NS_O_END;

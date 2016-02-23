@@ -120,14 +120,14 @@ DynamicState::~DynamicState()
 	CC_SAFE_DELETE(_exclucsion);
 }
 
-unsigned int DynamicState::exclusion()
+int DynamicState::exclusion()
 {
 	_exclucsion->exclusion();
 	refresh();
 	return _exclucsion->getExclusionCount();
 }
 
-unsigned int DynamicState::unexclusion()
+int DynamicState::unexclusion()
 {
 	_exclucsion->unexclusion();
 	refresh();

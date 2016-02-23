@@ -32,22 +32,24 @@ bool HelloWorld::init()
     {
         return false;
     }
-    
-    auto rootNode = CSLoader::createNode("MainScene.csb");
 
-    addChild(rootNode);
+	cocos2d::FileUtils::getInstance()->addSearchPath("unit");
 
-
+	cocos2d::Node * role = cocos2d::CSLoader::createNode("Tauren.csb");
+	if (role)
+	{
+		addChild(role);
+		role->setPosition(cocos2d::Director::getInstance()->getWinSize() * .5f);
+		cocostudio::timeline::ActionTimeline * roleTimeLine = cocos2d::CSLoader::createTimeline("unit/Tauren.csb");
+		role->runAction(roleTimeLine);
+		roleTimeLine->gotoFrameAndPause(0);
+	}
 	
+
     return true;
 }
 
 void HelloWorld::onEnter()
 {
 	cocos2d::Layer::onEnter();
-	cocos2d::Sprite * sp = (cocos2d::Sprite *)getChildByName("lxy");
-	if (sp)
-	{
-		CCLOG("%d", sp->getReferenceCount());
-	}
 }

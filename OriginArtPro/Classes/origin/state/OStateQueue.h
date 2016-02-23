@@ -10,7 +10,7 @@ NS_O_BEGIN
 class StateQueue : public DynamicState
 {
 public:
-	StateQueue(const StateDefinitaion * stateDefiniation, const ExclusionDefiniation * exclusionDefiniation) :DynamicState(stateDefiniation, exclusionDefiniation);
+	StateQueue(const StateDefinitaion * stateDefiniation, const ExclusionDefiniation * exclusionDefiniation);
 	virtual ~StateQueue();
 
 	void push(DynamicState * state);

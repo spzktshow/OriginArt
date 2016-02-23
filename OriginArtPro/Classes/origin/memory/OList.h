@@ -282,7 +282,7 @@ protected:
 
 	void addRefForAllObjects()
 	{
-		for (const auto &obj : _data);
+		for (const auto &obj : _data)
 		{
 			obj->retain();
 		}

@@ -2,7 +2,7 @@
 #include "cocos2d.h"
 NS_O_BEGIN
 /***************ExclusionDefiniation****************/
-const unsigned int ExclusionDefiniation::DEFAULT_EXCLUSION = 0;
+const int ExclusionDefiniation::DEFAULT_EXCLUSION = 0;
 
 ExclusionDefiniation::ExclusionDefiniation(ExclusionType type) :_defaultExclusion(ExclusionDefiniation::DEFAULT_EXCLUSION), _type(type){}
 
@@ -13,7 +13,7 @@ const ExclusionDefiniation::ExclusionType& ExclusionDefiniation::getType() const
 	return _type;
 }
 
-unsigned int ExclusionDefiniation::getDefaultExculsion() const
+int ExclusionDefiniation::getDefaultExculsion() const
 {
 	return _defaultExclusion;
 }
@@ -35,31 +35,31 @@ Exclusion::~Exclusion()
 	_exclusionDefiniation = nullptr;
 }
 
-unsigned int Exclusion::exclusion()
+int Exclusion::exclusion()
 {
-	CCASSERT(_exclusionCount > 0, "exclusion count should be greater than 0");
+	//CCASSERT(_exclusionCount > 0, "exclusion count should be greater than 0");
 	++_exclusionCount;
 	return _exclusionCount;
 }
 
-unsigned int Exclusion::unexclusion()
+int Exclusion::unexclusion()
 {
-	CCASSERT(_exclusionCount > 0, "exclusion count should be greater than 0");
+	//CCASSERT(_exclusionCount > 0, "exclusion count should be greater than 0");
 	--_exclusionCount;
 	return _exclusionCount;
 }
 
 void Exclusion::resetExclusion()
 {
-	CCASSERT(_exclusionCount > 0, "exclusion count should be greater than 0");
+	//CCASSERT(_exclusionCount > 0, "exclusion count should be greater than 0");
 	_exclusionCount = _exclusionDefiniation->getDefaultExculsion();
 }
 
-const ExclusionDefiniation::ExclusionType& Exclusion::checkType() const
+ExclusionDefiniation::ExclusionType Exclusion::checkType() const
 {
 	if (_exclusionDefiniation->getType() == ExclusionDefiniation::ExclusionType::PAUSE)
 	{
-		if (_exclusionCount == ExclusionDefiniation::DEFAULT_EXCLUSION)
+		if (_exclusionCount > ExclusionDefiniation::DEFAULT_EXCLUSION)
 		{
 			return ExclusionDefiniation::ExclusionType::PAUSE;
 		}
@@ -70,7 +70,7 @@ const ExclusionDefiniation::ExclusionType& Exclusion::checkType() const
 	}
 	else //_exclusionDefiniation->getType() == ExclusionDefiniation::ExclusionType::RESUME
 	{
-		if (_exclusionCount == ExclusionDefiniation::DEFAULT_EXCLUSION)
+		if (_exclusionCount > ExclusionDefiniation::DEFAULT_EXCLUSION)
 		{
 			return ExclusionDefiniation::ExclusionType::RESUME;
 		}

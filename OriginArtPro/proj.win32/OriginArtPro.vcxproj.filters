@@ -34,6 +34,9 @@
     <Filter Include="src\originGame\unit">
       <UniqueIdentifier>{462cca53-5856-4f9e-9d89-aaec9f36f20d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\origin\behaviorTree">
+      <UniqueIdentifier>{983e1c40-5814-4eeb-b960-9100bc3c9e37}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -77,6 +80,9 @@
     </ClCompile>
     <ClCompile Include="..\Classes\originGame\unit\OGUnitStateDefiniation.cpp">
       <Filter>src\originGame\unit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\origin\behaviorTree\OBehaviorTree.cpp">
+      <Filter>src\origin\behaviorTree</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -151,6 +157,12 @@
     </ClInclude>
     <ClInclude Include="..\Classes\originGame\unit\OGUnitStateDefiniation.h">
       <Filter>src\originGame\unit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\origin\behaviorTree\OBehaviorTree.h">
+      <Filter>src\origin\behaviorTree</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\origin\behaviorTree\OBehaviorTreeDebug.h">
+      <Filter>src\origin\behaviorTree</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
