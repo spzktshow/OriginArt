@@ -6,16 +6,15 @@
 
 NS_O_BEGIN
 
-class StateDefinitaion
+class StateDefiniation
 {
 public:
-	StateDefinitaion(const std::string& stateType);
-	virtual ~StateDefinitaion();
+	StateDefiniation(const std::string& stateType);
+	virtual ~StateDefiniation();
 
 	void setStateType(const std::string& stateType);
 
 	const std::string& getStateType() const;
-
 protected:
 	std::string _stateType;
 };
@@ -23,7 +22,7 @@ protected:
 class State : public cocos2d::Ref
 {
 public:
-	State(const StateDefinitaion * stateDefiniation);
+	State(const StateDefiniation * stateDefiniation);
 	virtual ~State();
 
 	virtual bool init();
@@ -37,7 +36,7 @@ public:
 	bool isStart() const;
 	bool isRunning() const;
 
-	const StateDefinitaion * getStateDefiniation() const;
+	const StateDefiniation * getStateDefiniation() const;
 
 	cocos2d::EventDispatcher * getEventDispatcher() const;
 	cocos2d::Scheduler * getScheduler() const;
@@ -48,7 +47,7 @@ protected:
 	virtual void pauseExecute() = 0;
 	virtual void resumeExecute() = 0;
 
-	const StateDefinitaion * _stateDefiniation;
+	const StateDefiniation * _stateDefiniation;
 
 	/****标记状态是否已经开始****/
 	bool _start;
@@ -59,10 +58,19 @@ protected:
 	cocos2d::Scheduler * _scheduler;
 };
 
+class DynamicStateDefiniation : public StateDefiniation
+{
+public:
+	DynamicStateDefiniation(const std::string&stateType, const ExclusionDefiniation*exclusionDefiniation);
+	virtual ~DynamicStateDefiniation();
+
+	CC_SYNTHESIZE_READONLY(const ExclusionDefiniation *, _exclusionDefiniation, ExclusionDef);
+};
+
 class DynamicState : public State, public ExclusionProtocol
 {
 public:
-	DynamicState(const StateDefinitaion * stateDefiniation, const ExclusionDefiniation * exclusionDefiniation);
+	DynamicState(const DynamicStateDefiniation * dynamicStateDefiniation);
 	virtual ~DynamicState();
 
 	int exclusion() override;
@@ -74,6 +82,11 @@ public:
 	virtual void refresh();
 
 	const Exclusion * getExclusion() const;
+
+	const DynamicStateDefiniation * getDynamicStateDefiniation() const
+	{
+		return dynamic_cast<const DynamicStateDefiniation *>(getStateDefiniation());
+	}
 protected:
 	Exclusion * _exclucsion;
 };

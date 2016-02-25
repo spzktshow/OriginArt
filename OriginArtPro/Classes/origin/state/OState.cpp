@@ -2,28 +2,28 @@
 
 NS_O_BEGIN
 /**********StateDefiniation**********/
-StateDefinitaion::StateDefinitaion(const std::string& stateType)
+StateDefiniation::StateDefiniation(const std::string& stateType) :_id(0)
 {
 	setStateType(stateType);
 }
 
-StateDefinitaion::~StateDefinitaion()
+StateDefiniation::~StateDefiniation()
 {
 }
 
-void StateDefinitaion::setStateType(const std::string& stateType)
+void StateDefiniation::setStateType(const std::string& stateType)
 {
 	if (_stateType == stateType) return;
 	_stateType = stateType;
 }
 
-const std::string& StateDefinitaion::getStateType() const
+const std::string& StateDefiniation::getStateType() const
 {
 	return _stateType;
 }
 
 /***************state****************/
-State::State(const StateDefinitaion * stateDefiniation)
+State::State(const StateDefiniation * stateDefiniation)
 	:_start(false)
 	, _running(false)
 	, _eventDispatcher(nullptr)
@@ -94,7 +94,7 @@ bool State::isRunning() const
 	return _running;
 }
 
-const StateDefinitaion * State::getStateDefiniation() const
+const StateDefiniation * State::getStateDefiniation() const
 {
 	return _stateDefiniation;
 }
@@ -109,10 +109,23 @@ cocos2d::Scheduler * State::getScheduler() const
 	return _scheduler;
 }
 
-/*****************DynamicState****************/
-DynamicState::DynamicState(const StateDefinitaion * stateDefiniation, const ExclusionDefiniation * exclusionDefiniation) :State(stateDefiniation), _exclucsion(nullptr)
+/******************DynamicStateDefiniation*****************/
+DynamicStateDefiniation::DynamicStateDefiniation(const std::string&stateType, const ExclusionDefiniation*exclusionDefiniation)
+	:StateDefiniation(stateType)
+	, _exclusionDefiniation(exclusionDefiniation)
 {
-	_exclucsion = new Exclusion(exclusionDefiniation);
+
+}
+
+DynamicStateDefiniation::~DynamicStateDefiniation()
+{
+	_exclusionDefiniation = nullptr;
+}
+
+/*****************DynamicState****************/
+DynamicState::DynamicState(const DynamicStateDefiniation * dynamicStateDefiniation) :State(dynamicStateDefiniation), _exclucsion(nullptr)
+{
+	_exclucsion = new Exclusion(dynamicStateDefiniation->getExclusionDef());
 }
 
 DynamicState::~DynamicState()

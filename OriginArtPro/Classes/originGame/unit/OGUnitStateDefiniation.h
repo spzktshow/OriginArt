@@ -3,20 +3,39 @@
 
 #include "OriginGameMacros.h"
 #include "origin.h"
+#include "cocostudio/DictionaryHelper.h"
+#include "OGState.h"
 
 NS_OG_BEGIN
 
-class UnitStateDefiniation : public origin::StateDefinitaion
+class UnitStateDefiniation : public StateComponentDefiniation
 {
 public:
-	UnitStateDefiniation(const std::string& type);
+	UnitStateDefiniation(const std::string& type, const origin::ExclusionDefiniation * exclusionDefiniation);
 	~UnitStateDefiniation();
 
-	/**持续时间，这个时间是标准时间，表示正常速度下人物播放帧的时间，如果人物有加速状态则时间会变短***/
-	CC_SYNTHESIZE(float, _time, Time);
-
+	//view
 	/***动作名称**/
 	CC_SYNTHESIZE_PASS_BY_REF(std::string, _actionName, ActionName);
+};
+
+class UnitStatesDefiniation
+{
+public:
+	UnitStatesDefiniation();
+	~UnitStatesDefiniation();
+
+	const std::map<std::string, UnitStateDefiniation*>& getStates() const
+	{
+		return _states;
+	}
+
+	void setStates(const std::map<std::string, UnitStateDefiniation*>states)
+	{
+		_states = states;
+	}
+protected:
+	std::map<std::string, UnitStateDefiniation *> _states;
 };
 
 NS_OG_END;

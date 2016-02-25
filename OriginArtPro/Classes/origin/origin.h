@@ -4,16 +4,19 @@
 #include "OriginMacros.h"
 //base
 #include "base/oConfig.h"
-//origin
+//behaviorTree
+#include "behaviorTree/OBehaviorTree.h"
+#include "behaviorTree/OBehaviorTreeDebug.h"
+//memory
+#include "memory/OList.h"
+#include "memory/ODeque.h"
+//state
 #include "state/OExclusion.h"
 #include "state/OState.h"
 #include "state/OStateDebug.h"
 #include "state/OStateQueue.h"
 #include "state/OStateStack.h"
 #include "state/OParallelQueue.h"
-//memory
-#include "memory/OList.h"
-#include "memory/ODeque.h"
 //structure
 #include "structure/OStack.h"
 #include "structure/OQueue.h"

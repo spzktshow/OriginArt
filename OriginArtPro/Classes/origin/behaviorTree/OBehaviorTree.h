@@ -4,6 +4,7 @@
 #include "OriginMacros.h"
 #include "cocos2d.h"
 #include "OBehaviorTreeDebug.h"
+#include "cocostudio/DictionaryHelper.h"
 
 NS_O_BEGIN
 
@@ -32,7 +33,7 @@ public:
 	CompositeBehaviorTreeNode(const std::string&compositeType);
 	virtual ~CompositeBehaviorTreeNode();
 
-	CC_SYNTHESIZE_PASS_BY_REF(std::vector<BehaviorTreeNode>, _children, Children);
+	CC_SYNTHESIZE_PASS_BY_REF(std::vector<BehaviorTreeNode *>, _children, Children);
 
 	CC_SYNTHESIZE_READONLY_PASS_BY_REF(std::string, _compositeType, CompositeType);
 
@@ -47,7 +48,7 @@ public:
 	DecoratorBehaviorTreeNode(const std::string&decoratorType);
 	virtual ~DecoratorBehaviorTreeNode();
 
-	CC_SYNTHESIZE_PASS_BY_REF(BehaviorTreeNode, _child, Child);
+	CC_SYNTHESIZE(BehaviorTreeNode *, _child, Child);
 
 	CC_SYNTHESIZE_READONLY_PASS_BY_REF(std::string, _decoratorType, DecoratorType);
 
@@ -133,13 +134,18 @@ public:
 	CC_SYNTHESIZE_READONLY_PASS_BY_REF(std::string, _eventName, EventName);
 };
 
-class BehaviorTreeParse
+class BehaviorTreeNodeParse
 {
 public:
-	BehaviorTreeParse();
-	virtual ~BehaviorTreeParse();
+	BehaviorTreeNodeParse();
+	virtual ~BehaviorTreeNodeParse();
 
-	static BehaviorTreeNode parse(const rapidjson::Value&);
+	virtual BehaviorTreeNode * parse(const rapidjson::Value&data);
+
+	virtual CompositeBehaviorTreeNode * parseCompositeBehaviorTreeNode(const rapidjson::Value&data);
+	virtual DecoratorBehaviorTreeNode * parseDecoratorBehaviorTreeNode(const rapidjson::Value&data);
+	virtual ConditionBehaviorTreeNode * parseConditionBehaviorTreeNode(const rapidjson::Value&data);
+	virtual ActionBehaviorTreeNode * parseActionBehaviorTreeNode(const rapidjson::Value&data);
 };
 
 class BehaviorTreeDefiniation
@@ -150,7 +156,11 @@ public:
 
 	CC_SYNTHESIZE(unsigned int, _id, ID);
 
-	CC_SYNTHESIZE_PASS_BY_REF(BehaviorTreeNode, _root, Root);
+	CC_SYNTHESIZE(BehaviorTreeNode *, _root, Root);
+
+	void parse(const rapidjson::Value&data);
+
+	virtual BehaviorTreeNodeParse getNodeParse();
 };
 
 class BehaviorTreesDefiniation
@@ -159,7 +169,7 @@ public:
 	BehaviorTreesDefiniation();
 	~BehaviorTreesDefiniation();
 
-	CC_SYNTHESIZE_PASS_BY_REF(std::vector<BehaviorTreeDefiniation>, _trees, Trees);
+	CC_SYNTHESIZE_PASS_BY_REF(std::vector<BehaviorTreeDefiniation *>, _trees, Trees);
 
 	void parse(const std::string&data);
 };

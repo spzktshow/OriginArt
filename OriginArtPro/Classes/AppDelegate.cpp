@@ -27,7 +27,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
     if(!glview) {
-        glview = GLViewImpl::createWithRect("OriginArtPro", Rect(0, 0, 960, 640));
+        glview = GLViewImpl::createWithRect("OriginArtPro", Rect(0, 0, 320, 160));
         director->setOpenGLView(glview);
     }
 
