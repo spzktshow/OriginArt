@@ -23,7 +23,7 @@ public:
 	Unit * entity;
 };
 
-class UnitState : public StateComponent
+class UnitState : public StateFactor
 {
 public:
 	UnitState(const UnitStateDefiniation *unitStateDefiniation);

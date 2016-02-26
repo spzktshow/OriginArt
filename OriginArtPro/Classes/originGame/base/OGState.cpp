@@ -2,52 +2,52 @@
 
 USING_NS_OG;
 
-const float StateComponentDefiniation::TIME_DATA_MAX = FLT_MAX;
+const float StateFactorDefiniation::TIME_DATA_MAX = FLT_MAX;
 
 /********************StateComponent**********************/
-StateComponent::StateComponent(const StateComponentDefiniation * stateComponentDefiniation)
+StateFactor::StateFactor(const StateFactorDefiniation * stateComponentDefiniation)
 	:origin::DynamicState(stateComponentDefiniation)
 	, _timeData(0.0f)
 {
 
 }
 
-StateComponent::~StateComponent()
+StateFactor::~StateFactor()
 {
 
 }
 
-const StateComponentDefiniation * StateComponent::getStateComponentDefiniation() const
+const StateFactorDefiniation * StateFactor::getStateComponentDefiniation() const
 {
-	return dynamic_cast<const StateComponentDefiniation *>(getDynamicStateDefiniation());
+	return dynamic_cast<const StateFactorDefiniation *>(getDynamicStateDefiniation());
 }
 
-void StateComponent::startExecute()
+void StateFactor::startExecute()
 {
 	origin::DynamicState::startExecute();
 
-	const StateComponentDefiniation * definiation = getStateComponentDefiniation();
+	const StateFactorDefiniation * definiation = getStateComponentDefiniation();
 	if (definiation && definiation->getTime() > 0 && getScheduler())
 	{
-		getScheduler()->schedule(schedule_selector(StateComponent::lifeTimeUpdate), this, 0.1, (int)(definiation->getTime() * 10.0f), 0.0f, !isRunning());
+		getScheduler()->schedule(schedule_selector(StateFactor::lifeTimeUpdate), this, 0.1, (int)(definiation->getTime() * 10.0f), 0.0f, !isRunning());
 	}
 	else
 	{
-		_timeData = StateComponentDefiniation::TIME_DATA_MAX;
+		_timeData = StateFactorDefiniation::TIME_DATA_MAX;
 	}
 }
 
-void StateComponent::stopExecute()
+void StateFactor::stopExecute()
 {
-	const StateComponentDefiniation * definiation = getStateComponentDefiniation();
+	const StateFactorDefiniation * definiation = getStateComponentDefiniation();
 	if (definiation && definiation->getTime() > 0)
 	{
-		getScheduler()->unschedule(schedule_selector(StateComponent::lifeTimeUpdate), this);
+		getScheduler()->unschedule(schedule_selector(StateFactor::lifeTimeUpdate), this);
 	}
 	origin::DynamicState::stopExecute();
 }
 
-void StateComponent::pauseExecute()
+void StateFactor::pauseExecute()
 {
 	if (getEventDispatcher())
 	{
@@ -60,7 +60,7 @@ void StateComponent::pauseExecute()
 	}
 }
 
-void StateComponent::resumeExecute()
+void StateFactor::resumeExecute()
 {
 	if (getScheduler())
 	{
@@ -73,10 +73,10 @@ void StateComponent::resumeExecute()
 	}
 }
 
-void StateComponent::lifeTimeUpdate(float dt)
+void StateFactor::lifeTimeUpdate(float dt)
 {
 	_timeData += 0.1f;
-	const StateComponentDefiniation * definiation = getStateComponentDefiniation();
+	const StateFactorDefiniation * definiation = getStateComponentDefiniation();
 	if (definiation)
 	{
 		if (_timeData >= definiation->getTime())
@@ -86,7 +86,7 @@ void StateComponent::lifeTimeUpdate(float dt)
 	}
 }
 
-void StateComponent::lifeTimeComplete(float dt)
+void StateFactor::lifeTimeComplete(float dt)
 {
 
 }

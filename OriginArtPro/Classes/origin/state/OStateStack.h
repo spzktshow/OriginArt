@@ -10,7 +10,7 @@ NS_O_BEGIN
 class StateStack : public DynamicState
 {
 public:
-	StateStack(const StateDefinitaion * stateDefiniation, const ExclusionDefiniation * exclusionDefiniation);
+	StateStack(const DynamicStateDefiniation * dynamicStateDefiniation);
 	virtual ~StateStack();
 
 	void pushBack(DynamicState * state);

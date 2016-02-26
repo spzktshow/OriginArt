@@ -2,7 +2,7 @@
 
 USING_NS_O;
 
-StateQueue::StateQueue(const StateDefinitaion * stateDefiniation, const ExclusionDefiniation * exclusionDefiniation) :DynamicState(stateDefiniation, exclusionDefiniation){}
+StateQueue::StateQueue(const DynamicStateDefiniation * dynamicStateDefiniation) :DynamicState(dynamicStateDefiniation){}
 
 StateQueue::~StateQueue(){};
 

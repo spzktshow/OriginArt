@@ -2,7 +2,7 @@
 
 USING_NS_O;
 /**************StateStack***************/
-StateStack::StateStack(const StateDefinitaion * stateDefiniation, const ExclusionDefiniation * exclusionDefiniation) :DynamicState(stateDefiniation, exclusionDefiniation){}
+StateStack::StateStack(const DynamicStateDefiniation * dynamicStateDefiniation) :DynamicState(dynamicStateDefiniation){}
 
 StateStack::~StateStack(){}
 

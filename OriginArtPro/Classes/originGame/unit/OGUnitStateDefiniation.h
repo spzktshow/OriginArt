@@ -8,7 +8,7 @@
 
 NS_OG_BEGIN
 
-class UnitStateDefiniation : public StateComponentDefiniation
+class UnitStateDefiniation : public StateFactorDefiniation
 {
 public:
 	UnitStateDefiniation(const std::string& type, const origin::ExclusionDefiniation * exclusionDefiniation);

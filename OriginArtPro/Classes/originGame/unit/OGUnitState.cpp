@@ -4,7 +4,7 @@ USING_NS_OG;
 
 /***************UnitState**************/
 UnitState::UnitState(const UnitStateDefiniation *unitStateDefiniation) 
-	:StateComponent(unitStateDefiniation)
+	:StateFactor(unitStateDefiniation)
 {
 
 }
@@ -16,22 +16,22 @@ UnitState::~UnitState()
 
 void UnitState::startExecute()
 {
-	StateComponent::startExecute();
+	StateFactor::startExecute();
 }
 
 void UnitState::stopExecute()
 {
-	StateComponent::stopExecute();
+	StateFactor::stopExecute();
 }
 
 void UnitState::pauseExecute()
 {
-	StateComponent::pauseExecute();
+	StateFactor::pauseExecute();
 }
 
 void UnitState::resumeExecute()
 {
-	StateComponent::resumeExecute();
+	StateFactor::resumeExecute();
 }
 
 /*****************UnitAttackState******************/
