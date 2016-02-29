@@ -90,3 +90,14 @@ void StateFactor::lifeTimeComplete(float dt)
 {
 
 }
+
+/****************StateFactorDefiniation******************/
+StateFactorDefiniation::StateFactorDefiniation(const std::string& type, const origin::ExclusionDefiniation * exclusionDefiniation) :origin::DynamicStateDefiniation(type, exclusionDefiniation)
+{
+
+}
+
+StateFactorDefiniation::~StateFactorDefiniation()
+{
+
+}

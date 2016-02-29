@@ -2,7 +2,7 @@
 
 NS_O_BEGIN
 /**********StateDefiniation**********/
-StateDefiniation::StateDefiniation(const std::string& stateType) :_id(0)
+StateDefiniation::StateDefiniation(const std::string& stateType)
 {
 	setStateType(stateType);
 }

@@ -26,7 +26,7 @@ public:
 	virtual ~StateFactor();
 
 	const StateFactorDefiniation * getStateComponentDefiniation() const;
-
+protected:
 	void startExecute() override;
 	void stopExecute() override;
 	void pauseExecute() override;

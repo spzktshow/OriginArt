@@ -41,11 +41,11 @@ public:
 	cocos2d::EventDispatcher * getEventDispatcher() const;
 	cocos2d::Scheduler * getScheduler() const;
 protected:
-	virtual void startExecute() = 0;
-	virtual void stopExecute() = 0;
+	virtual void startExecute(){};
+	virtual void stopExecute(){};
 
-	virtual void pauseExecute() = 0;
-	virtual void resumeExecute() = 0;
+	virtual void pauseExecute(){};
+	virtual void resumeExecute(){};
 
 	const StateDefiniation * _stateDefiniation;
 

@@ -14,6 +14,9 @@ public:
 	~Unit();
 
 	CC_SYNTHESIZE(unsigned int, _uid, UID);
+
+	/*******单位定义********/
+	CC_SYNTHESIZE_READONLY(const UnitDefiniation *, _unitDefiniation, UnitDefiniation);
 };
 
 NS_OG_END
