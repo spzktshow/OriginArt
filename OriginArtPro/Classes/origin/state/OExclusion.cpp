@@ -28,6 +28,7 @@ ExclusionProtocol::~ExclusionProtocol()
 Exclusion::Exclusion(const ExclusionDefiniation * exclusionDefiniation) :_exclusionDefiniation(exclusionDefiniation)
 {
 	CCASSERT(_exclusionDefiniation != nullptr, "exclusionDefiniation must !=nullptr");
+	_exclusionCount = _exclusionDefiniation->getDefaultExculsion();
 }
 
 Exclusion::~Exclusion()

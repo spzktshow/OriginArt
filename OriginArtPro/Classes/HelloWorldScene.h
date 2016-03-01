@@ -2,6 +2,7 @@
 #define __HELLOWORLD_SCENE_H__
 
 #include "cocos2d.h"
+#include "OGUnit.h"
 
 class HelloWorld : public cocos2d::Layer
 {
@@ -16,7 +17,11 @@ public:
     // implement the "static create()" method manually
     CREATE_FUNC(HelloWorld);
 
-	std::vector<cocos2d::RefPtr<cocos2d::Sprite>> ps;
+	originGame::Unit * _unit;
+
+	cocos2d::EventListenerKeyboard * _keyBoardListener;
+	void onPressed(cocos2d::EventKeyboard::KeyCode, cocos2d::Event*);
+	void onReleased(cocos2d::EventKeyboard::KeyCode, cocos2d::Event*);
 };
 
 #endif // __HELLOWORLD_SCENE_H__

@@ -18,6 +18,9 @@ public:
 	~UnitCurrentStateEqualCondition();
 
 	bool execute(cocos2d::EventCustom * event) const override;
+
+protected:
+	std::string _currentState;
 };
 
 /*********当前状态生命周期比较*******/
@@ -31,10 +34,13 @@ public:
 		EQUAL = 0,
 		GREATER = 1,
 	};
-	UnitCurrentStateLifeTimeEqualCondition(const EqualSign&equalSign);
+	UnitCurrentStateLifeTimeEqualCondition(const EqualSign&equalSign, float time);
 	~UnitCurrentStateLifeTimeEqualCondition();
 
 	bool execute(cocos2d::EventCustom * event) const override;
+protected:
+	EqualSign _equalSign;
+	float _time;
 };
 
 //=========================Action==================================

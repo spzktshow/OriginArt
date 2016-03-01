@@ -1,0 +1,71 @@
+<Solution>
+  <PropertyGroup Name="Unit" Version="2.3.3.0" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Project Name="MainScene.csd" Type="Scene" />
+        <Folder Name="unit72003">
+          <Folder Name="atk1">
+            <Image Name="7200330_0000.png" />
+            <Image Name="7200330_0001.png" />
+            <Image Name="7200330_0002.png" />
+            <Image Name="7200330_0003.png" />
+            <Image Name="7200330_0004.png" />
+            <Image Name="7200330_0005.png" />
+            <Image Name="7200330_0006.png" />
+            <Image Name="7200330_0007.png" />
+          </Folder>
+          <Folder Name="atk2">
+            <Image Name="7200331_0000.png" />
+            <Image Name="7200331_0001.png" />
+            <Image Name="7200331_0002.png" />
+            <Image Name="7200331_0003.png" />
+            <Image Name="7200331_0004.png" />
+            <Image Name="7200331_0005.png" />
+            <Image Name="7200331_0006.png" />
+            <Image Name="7200331_0007.png" />
+            <Image Name="7200331_0008.png" />
+          </Folder>
+          <Folder Name="hurt">
+            <Image Name="7200350_0000.png" />
+            <Image Name="7200350_0001.png" />
+            <Image Name="7200350_0002.png" />
+            <Image Name="7200350_0003.png" />
+          </Folder>
+          <Folder Name="idle">
+            <Image Name="7200310_0000.png" />
+            <Image Name="7200310_0001.png" />
+            <Image Name="7200310_0002.png" />
+            <Image Name="7200310_0003.png" />
+            <Image Name="7200310_0004.png" />
+            <Image Name="7200310_0005.png" />
+            <Image Name="7200310_0006.png" />
+            <Image Name="7200310_0007.png" />
+          </Folder>
+          <Folder Name="skill">
+            <Image Name="7200340_0000.png" />
+            <Image Name="7200340_0001.png" />
+            <Image Name="7200340_0002.png" />
+            <Image Name="7200340_0003.png" />
+            <Image Name="7200340_0004.png" />
+            <Image Name="7200340_0005.png" />
+            <Image Name="7200340_0006.png" />
+            <Image Name="7200340_0007.png" />
+          </Folder>
+          <Folder Name="walk">
+            <Image Name="7200320_0000.png" />
+            <Image Name="7200320_0001.png" />
+            <Image Name="7200320_0002.png" />
+            <Image Name="7200320_0003.png" />
+            <Image Name="7200320_0004.png" />
+            <Image Name="7200320_0005.png" />
+            <Image Name="7200320_0006.png" />
+            <Image Name="7200320_0007.png" />
+          </Folder>
+          <Project Name="unit72003.csd" Type="Node" />
+        </Folder>
+        <Image Name="shadow.png" />
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>

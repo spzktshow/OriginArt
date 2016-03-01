@@ -34,6 +34,20 @@ const Stack<DynamicState *> StateStack::getStack() const
 	return _stack;
 }
 
+bool StateStack::hasPopBack()
+{
+	if (_stack.size() > 0)
+	{
+		return true;
+	}
+}
+
+DynamicState * StateStack::getPopBack()
+{
+	if (hasPopBack()) return _stack.getContainer().at(_stack.size() - 1);
+	return nullptr;
+}
+
 void StateStack::startExecute()
 {
 

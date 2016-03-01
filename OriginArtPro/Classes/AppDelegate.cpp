@@ -27,7 +27,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
     if(!glview) {
-        glview = GLViewImpl::createWithRect("OriginArtPro", Rect(0, 0, 320, 160));
+        glview = GLViewImpl::createWithRect("OriginArtPro", Rect(0, 0, 960, 640));
         director->setOpenGLView(glview);
     }
 
@@ -40,6 +40,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     director->setAnimationInterval(1.0 / 60);
 
     FileUtils::getInstance()->addSearchPath("res");
+	FileUtils::getInstance()->addSearchPath("unit");
 
     // create a scene. it's an autorelease object
     auto scene = HelloWorld::createScene();

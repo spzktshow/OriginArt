@@ -9,12 +9,12 @@ StateFactor::StateFactor(const StateFactorDefiniation * stateComponentDefiniatio
 	:origin::DynamicState(stateComponentDefiniation)
 	, _timeData(0.0f)
 {
-
+	_scheduler = cocos2d::Director::getInstance()->getScheduler();
 }
 
 StateFactor::~StateFactor()
 {
-
+	_scheduler = nullptr;
 }
 
 const StateFactorDefiniation * StateFactor::getStateComponentDefiniation() const

@@ -38,6 +38,34 @@ protected:
 	std::map<std::string, UnitStateDefiniation *> _states;
 };
 
+class Unit;
+class UnitStateData
+{
+public:
+	static const std::string EVENT_ATTACK;
+	static const std::string EVENT_BEATTACK;
+	static const std::string EVENT_RUN;
+	static const std::string EVENT_DEAD;
+	static const std::string EVENT_IDLE;
+
+	static const std::string EVENT_ATTACK_COMPLETE;
+	static const std::string EVENT_BEATTACK_COMPLETE;
+	static const std::string EVENT_DEAD_COMPLETE;
+
+	static const std::string STATE_ATTACK1;
+	static const std::string STATE_ATTACK2;
+	static const std::string STATE_SKILL;
+	static const std::string STATE_DEAD;
+	static const std::string STATE_WALK;
+	static const std::string STATE_IDLE;
+	static const std::string STATE_HURT;
+
+	UnitStateData();
+	~UnitStateData();
+
+	Unit * unit;
+};
+
 NS_OG_END;
 
 #endif // !__ORIGIN_UNIT_STATE_DEFINIATION_H_
